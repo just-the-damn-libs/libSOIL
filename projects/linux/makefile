@@ -16,7 +16,7 @@ MAJOR = 1
 HFILES = SOIL.h image_DXT.h image_helper.h \
   stbi_DDS_aug.h stbi_DDS_aug_c.h stb_image_aug.h
 AFILE = libSOIL.a
-SOFILE = libSOIL.so
+SOFILE = libSOIL.so.$(VERSION)
 INCLUDEDIR = /usr/include/SOIL
 LIBDIR = /usr/lib
 
@@ -29,7 +29,7 @@ lib: $(OFILES)
 	# create static library
 	ar -cvq $(LIBNAME).a $(OFILES)
 	# create shared library
-	gcc -shared -Wl,-soname,$(LIBNAME).so -o $(LIBNAME).so.$(VERSION) $(OFILES)
+	gcc -shared -Wl,-soname,$(LIBNAME).so.$(MAJOR) -o $(SOFILE) $(OFILES)
 
 install:
 	$(INSTALL_DIR) $(DESTDIR)/$(INCLUDEDIR)
