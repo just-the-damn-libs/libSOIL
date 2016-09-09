@@ -5,10 +5,10 @@ os: osx
 matrix:
   include:
     - os: linux
-      env: DEPLOY_FILE=cimgui.so
+      env: DEPLOY_FILE=libSOIL.so
       script: make -f projects/linux/makefile
     - os: osx
-      env: DEPLOY_FILE=cimgui.dylib
+      env: DEPLOY_FILE=libSOIL.dylib
       script: make -f projects/osx/makefile
 
 compiler:
