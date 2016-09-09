@@ -6,10 +6,10 @@ matrix:
   include:
     - os: linux
       env: DEPLOY_FILE=cimgui.so
-      script: make projects/linux/
+      script: make -f projects/linux/makefile
     - os: osx
       env: DEPLOY_FILE=cimgui.dylib
-      script: make
+      script: make -f projects/osx/makefile
 
 compiler:
 - clang
