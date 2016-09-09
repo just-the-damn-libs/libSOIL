@@ -29,7 +29,7 @@ lib: $(OFILES)
 	# create static library
 	ar -cvq $(LIBNAME).a $(OFILES)
 	# create shared library
-	gcc -shared -Wl,-soname,$(LIBNAME).so.$(MAJOR) -o $(LIBNAME).so.$(VERSION) $(OFILES)
+	gcc -shared -Wl,-soname,$(LIBNAME).so -o $(LIBNAME).so.$(VERSION) $(OFILES)
 
 install:
 	$(INSTALL_DIR) $(DESTDIR)/$(INCLUDEDIR)
