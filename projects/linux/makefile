@@ -16,7 +16,7 @@ MAJOR = 1
 HFILES = SOIL.h image_DXT.h image_helper.h \
   stbi_DDS_aug.h stbi_DDS_aug_c.h stb_image_aug.h
 AFILE = libSOIL.a
-SOFILE = libSOIL.so.$(VERSION)
+SOFILE = libSOIL.so
 INCLUDEDIR = /usr/include/SOIL
 LIBDIR = /usr/lib
 
