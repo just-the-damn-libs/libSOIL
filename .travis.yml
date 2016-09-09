@@ -5,12 +5,11 @@ matrix:
     - os: linux
       env: DEPLOY_FILE=libSOIL.so
       script: make -f projects/linux/makefile
+      compiler: clang
     - os: osx
       env: DEPLOY_FILE=libSOIL.dylib
       script: make -f projects/osx/makefile
-
-compiler:
-- clang
+      compiler: clang
 
 deploy:
   provider: releases
