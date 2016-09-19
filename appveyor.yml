@@ -1,0 +1,11 @@
+clone_folder: c:\projects\libsoil
+os: Visual Studio 2015
+platform: x64
+configuration: Release
+
+before_build:
+    - cd c:\projects\libsoil\projects\win\
+    - cmake -G "Visual Studio 14 2015 Win64"
+
+build:
+    project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
