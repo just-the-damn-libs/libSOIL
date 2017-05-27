@@ -9,3 +9,15 @@ before_build:
 
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
+
+deploy:
+  release: libsoil-v$(appveyor_build_version)
+  description: 'Windows binary'
+  provider: GitHub
+  auth_token:
+    secure: XSb9h9W4f7bSSB7IQ3m3wngD2WA/hS0mq/aEDynzsVGkETjkjgq8im67ByH7FDX3
+  artifact: /.*\.dll/
+  draft: false
+  prerelease: false
+  on:
+    branch: master
