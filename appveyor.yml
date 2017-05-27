@@ -2,6 +2,8 @@ clone_folder: c:\projects\libsoil
 os: Visual Studio 2015
 configuration: Release
 
+skip_tags: true
+
 before_build:
     - cd c:\projects\libsoil\projects\win\
     - cmake -G "Visual Studio 14 2015 Win64"
@@ -13,13 +15,18 @@ platform:
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
 
+artifacts:
+  - path: C:\projects\libsoil\projects\win\Release\soil.dll
+    name: theDLL
+    type: File
+
 deploy:
   release: libsoil-v$(appveyor_build_version)-$(PLATFORM)
   description: 'Appveyor Build'
   provider: GitHub
   auth_token:
     secure: XSb9h9W4f7bSSB7IQ3m3wngD2WA/hS0mq/aEDynzsVGkETjkjgq8im67ByH7FDX3
-  artifact: projects\win\Release\soil.dll
+  artifact: theDLL
   draft: false
   prerelease: false
   on:
