@@ -16,9 +16,8 @@ build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
 
 artifacts:
-  - path: .\projects\win\Release\soil.dll
-    name: theDLL
-    type: File
+  - path: .\projects\win\Release\
+    name: Release
 
 deploy:
   release: libsoil-v$(appveyor_build_version)-$(PLATFORM)
@@ -26,7 +25,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: XSb9h9W4f7bSSB7IQ3m3wngD2WA/hS0mq/aEDynzsVGkETjkjgq8im67ByH7FDX3
-  artifact: theDLL
+  artifact: Release
   draft: false
   prerelease: false
   on:
