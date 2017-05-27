@@ -16,7 +16,7 @@ build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
 
 artifacts:
-  - path: .\projects\win\Release\
+  - path: .\projects\win\
     name: Release
 
 deploy:
