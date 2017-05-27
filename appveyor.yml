@@ -16,7 +16,7 @@ build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
 
 artifacts:
-  - path: C:projects\win\Release\soil.dll
+  - path: .\projects\win\Release\soil.dll
     name: theDLL
     type: File
 
