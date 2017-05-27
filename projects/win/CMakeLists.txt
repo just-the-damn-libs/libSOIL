@@ -1,5 +1,9 @@
 cmake_minimum_required (VERSION 2.6)
-project (SOIL)
+project (SOIL C)
+
+IF(NOT CMAKE_BUILD_TYPE)
+    SET(CMAKE_BUILD_TYPE "Release")
+ENDIF(NOT CMAKE_BUILD_TYPE)
 
 add_definitions (-D_CRT_SECURE_NO_WARNINGS )
 include_directories (../..)
