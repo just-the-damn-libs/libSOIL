@@ -4,14 +4,14 @@ configuration: Release
 
 skip_tags: true
 
-before_build:
-    - cd c:\projects\libsoil\projects\win\
-    - cmake -G "Visual Studio 14 2015 Win64"
-
 platform:
   - Win32
-  - x64
-    
+  - Win64
+
+before_build:
+    - cd c:\projects\libsoil\projects\win\
+    - cmake -G "Visual Studio 14 2015 %PLATFORM%"
+  
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
 
