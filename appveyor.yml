@@ -4,18 +4,13 @@ configuration: Release
 
 skip_tags: true
 
-matrix:
-  include:
-    - platform: Win32
-      configuration: Debug
-      foo: "Visual Studio 14 2015"
-    - platform: x64
-      configuration: Release
-      foo: "Visual Studio 14 2015 Win64"
+platform:
+  - Win32
+  - x64
   
 before_build:
-    - cd c:\projects\libsoil\projects\win\
-    - cmake -G "%foo%"
+  - cd c:\projects\libsoil\projects\win\
+  - if $(PLATFORM) = "x64"; then cmake -G "Visual Studio 14 2015 Win64"; else cmake -G "Visual Studio 14 2015"; fi
   
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
