@@ -7,11 +7,20 @@ skip_tags: true
 environment:
   matrix:
     - VSType: "Visual Studio 14 2015"
+      ArchId: 0
     - VSType: "Visual Studio 14 2015 Win64"
+      ArchId: 1      
 
 platform:
   - Win32
   - x64
+
+matrix:
+  exclude:
+    - platform: Win32
+      ArchId: 1
+    - platform: x64
+      ArchId: 0
   
 before_build:
   - cd c:\projects\libsoil\projects\win\
