@@ -9,9 +9,13 @@ platform:
   - x64
   
 before_build:
-  - cd c:\projects\libsoil\projects\win\
-  - IF $(PLATFORM)=="x64" cmake -G "Visual Studio 14 2015 Win64"
-  - IF $(PLATFORM)=="Win32" cmake -G "Visual Studio 14 2015"
+  - ps: >-
+      If ($env:Platform -Match "Win32") {
+        $env:FOO="Visual Studio 14 2015"
+      } Else {
+        $env:FOO="Visual Studio 14 2015 Win64"
+      }
+  - cmake -G "%FOO%"
   
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
