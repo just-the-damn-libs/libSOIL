@@ -10,7 +10,7 @@ platform:
   
 before_build:
   - cd c:\projects\libsoil\projects\win\
-  - if $(PLATFORM) = "x64"; then cmake -G "Visual Studio 14 2015 Win64"; else cmake -G "Visual Studio 14 2015"; fi
+  - if $(PLATFORM)="x64"; then cmake -G "Visual Studio 14 2015 Win64"; else cmake -G "Visual Studio 14 2015"; fi
   
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
