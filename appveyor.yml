@@ -4,13 +4,27 @@ configuration: Release
 
 skip_tags: true
 
+environment:
+  matrix:
+    - VSType: "Visual Studio 14 2015"
+      ArchBits: 32
+    - VSType: "Visual Studio 14 2015 Win64"
+      ArchBits: 64     
+
 platform:
   - Win32
-  - Win64
+  - x64
 
+matrix:
+  exclude:
+    - platform: Win32
+      ArchBits: 64
+    - platform: x64
+      ArchBits: 32
+  
 before_build:
-    - cd c:\projects\libsoil\projects\win\
-    - cmake -G "Visual Studio 14 2015 %PLATFORM%"
+  - cd c:\projects\libsoil\projects\win\
+  - cmake -G "%VSTYPE%"
   
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
