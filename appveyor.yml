@@ -4,17 +4,18 @@ configuration: Release
 
 skip_tags: true
 
+environment:
+  matrix:
+    - VSType: "Visual Studio 14 2015"
+    - VSType: "Visual Studio 14 2015 Win64"
+
 platform:
   - Win32
   - x64
   
 before_build:
-  - ps: >-
-      If ($env:Platform -Match "Win32") {
-        cmake -G "Visual Studio 14 2015"
-      } Else {
-        cmake -G "Visual Studio 14 2015 Win64"
-      }
+  - cd c:\projects\libsoil\projects\win\
+  - cmake -G "%VSTYPE%"
   
 build:
     project: c:\projects\libsoil\projects\win\ALL_BUILD.vcxproj
